@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<body>
+{% extends "base.html" %}
+{% block content %}
+
+<h3>Users</h3>
+
+{% for name, user in users.items() %}
+<div class="card p-3 mb-2">
+    <h5>{{ name }}</h5>
+
+    {% if user.borrowed_books %}
+        <ul>
+        {% for book in user.borrowed_books %}
+            <li>{{ book.title }}</li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No books borrowed</p>
+    {% endif %}
+</div>
+{% endfor %}
+
+{% endblock %}
+<a href="/dashboard">Back</a>
+
+</body>
+</html>

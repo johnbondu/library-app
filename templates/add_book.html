@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Book</title>
+</head>
+
+<body>
+    {% extends "base.html" %}
+{% block content %}
+
+<h3>Add Book</h3>
+
+<form method="POST" class="col-md-6">
+    <input class="form-control mb-2" name="book_id" placeholder="Book ID">
+    <input class="form-control mb-2" name="title" placeholder="Title">
+    <input class="form-control mb-2" name="author" placeholder="Author">
+    <button class="btn btn-primary">Add</button>
+</form>
+
+<div class="mt-3">
+    <a href="/dashboard" class="btn btn-secondary">
+        🏠 Dashboard
+    </a>
+</div>
+{% endblock %}
+</body>
+
+</html>

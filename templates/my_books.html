@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Books</title>
+</head>
+<body>
+    {% extends "base.html" %}
+{% block content %}
+
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h3>My Borrowed Books</h3>
+
+    <a href="/dashboard" class="btn btn-secondary btn-sm">
+        🏠 Dashboard
+    </a>
+</div>
+
+{% if books %}
+<table class="table table-bordered">
+<tr>
+    <th>ID</th>
+    <th>Title</th>
+</tr>
+
+{% for book in books %}
+<tr>
+    <td>{{ book.book_id }}</td>
+    <td>{{ book.title }}</td>
+</tr>
+{% endfor %}
+</table>
+
+{% else %}
+<div class="alert alert-info">
+    You have not borrowed any books
+</div>
+{% endif %}
+
+{% endblock %}
+    
+</body>
+</html>

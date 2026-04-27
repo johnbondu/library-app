@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    {% extends "base.html" %}
+    {% block content %}
+
+    <h3 class="mb-4">Dashboard</h3>
+
+    <div class="row g-4">
+
+        {% if role == "admin" %}
+
+        <!-- 📚 Book Management -->
+        <div class="col-md-4">
+            <div class="card shadow p-3">
+                <h5><i class="fas fa-book"></i> Book Management</h5>
+                <a href="/add_book" class="btn btn-primary w-100 mt-2">
+                    <i class="fas fa-plus"></i> Add Book
+                </a>
+                <a href="/remove_book" class="btn btn-danger w-100 mt-2">
+                    <i class="fas fa-trash"></i> Remove Book
+                </a>
+                <a href="/show_books" class="btn btn-secondary w-100 mt-2">
+                    <i class="fas fa-list"></i> Show Books
+                </a>
+            </div>
+        </div>
+
+        <!-- 🔍 Search -->
+        <div class="col-md-4">
+            <div class="card shadow p-3">
+                <h5><i class="fas fa-search"></i> Search</h5>
+                <a href="/search" class="btn btn-info w-100 mt-2">
+                    <i class="fas fa-search"></i> Search Book
+                </a>
+                <a href="/available" class="btn btn-success w-100 mt-2">
+                    <i class="fas fa-check"></i> Available Books
+                </a>
+                <a href="/borrowed" class="btn btn-warning w-100 mt-2">
+                    <i class="fas fa-book-reader"></i> Borrowed Books
+                </a>
+            </div>
+        </div>
+
+        <!-- 👥 Admin Controls -->
+        <div class="col-md-4">
+            <div class="card shadow p-3">
+                <h5><i class="fas fa-user-shield"></i> Admin</h5>
+                <a href="/users" class="btn btn-dark w-100 mt-2">
+                    <i class="fas fa-users"></i> Users
+                </a>
+                <a href="/create_admin" class="btn btn-outline-dark w-100 mt-2">
+                    <i class="fas fa-user-plus"></i> Create Admin
+                </a>
+            </div>
+        </div>
+
+        {% else %}
+
+        <!-- 📚 User Actions -->
+        <div class="col-md-6">
+            <div class="card shadow p-3">
+                <h5><i class="fas fa-user"></i> Actions</h5>
+                <a href="/borrow" class="btn btn-primary w-100 mt-2">
+                    <i class="fas fa-book"></i> Borrow Book
+                </a>
+                <a href="/return" class="btn btn-warning w-100 mt-2">
+                    <i class="fas fa-undo"></i> Return Book
+                </a>
+                <a href="/show_books" class="btn btn-secondary w-100 mt-2">
+                    <i class="fas fa-list"></i> Show Books
+                </a>
+            </div>
+        </div>
+
+        <!-- 🔍 Explore -->
+        <div class="col-md-6">
+            <div class="card shadow p-3">
+                <h5><i class="fas fa-search"></i> Explore</h5>
+                <a href="/search" class="btn btn-info w-100 mt-2">
+                    <i class="fas fa-search"></i> Search
+                </a>
+                <a href="/available" class="btn btn-success w-100 mt-2">
+                    <i class="fas fa-check"></i> Available Books
+                </a>
+                <a href="/borrowed" class="btn btn-dark w-100 mt-2">
+                    <i class="fas fa-book-reader"></i> Borrowed Books
+                </a>
+
+                 <a href="/my_books" class="btn btn-primary w-100 mt-2">
+                    📖 My Books
+                </a>
+            </div>
+        </div>
+
+        {% endif %}
+
+    </div>
+
+    {% endblock %}
+
+</body>
+
+</html>
