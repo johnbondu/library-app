@@ -22,4 +22,6 @@ class User:
             print(f"{self.name} returned {book.title}")
         else:
             print("You don't have this book")
+
+# Here we store the user details
         
