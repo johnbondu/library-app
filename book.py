@@ -7,3 +7,6 @@ class Book:
     def display_info(self):
         status = "Available" if self.available else "Not Available "
         print(f"{self.book_id} - {self.title} by {self.author}[{status}]") 
+
+
+#this shows books details
