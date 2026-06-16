@@ -7,7 +7,7 @@ import json
 
 
 app = Flask(__name__)
-app.secret_key="your_secret_key"
+app.secret_key="your_secret_key"      #it is a sceret key
 
 def load_users(library):
     users = {}
